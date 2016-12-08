@@ -1,0 +1,124 @@
+.panel-heading, .panel-footer {
+    text-align: center;
+}
+
+.panel-body img {
+    margin-bottom: 10px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+label {
+    display: inline;
+}
+
+.regular-checkbox {
+    display: none;
+}
+
+.regular-checkbox + label {
+    background-color: #fafafa;
+    border: 1px solid #babebe;
+    border-radius: 50%;
+    padding: 9px;
+    display: inline-block;
+    position: relative;
+}
+
+.regular-checkbox:checked + label {
+    background-color: rgb(52, 152, 219);
+    border: 1px solid #cacece;
+    color: #fff;
+}
+
+.regular-checkbox:checked + label:after {
+    content: '\2714';
+    font-size: 14px;
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    color: #fff;
+}
+
+.big-checkbox + label {
+    padding: 18px;
+}
+
+.big-checkbox:checked + label:after {
+    font-size: 28px;
+    left: 6px;
+}
+
+.etiqueta {
+    float: right;
+    font-weight: bold;
+    display: block;
+    font-size: 22px;
+    line-height: 40px;
+}
+
+#botonContinuar, #botonPagarTarjeta {
+    float: right;
+}
+
+.error {
+    padding: 8px 0;
+    text-align: center;
+    font-size: 1.5em;
+    color: red;
+    background-color: #333;
+}
+
+.apartado {
+    background-image: url("imagenes/apartado.png");
+    background-size: cover;
+    width: 100%;
+    height: 768px;
+    color: #fff;
+    text-align: center;
+    padding: 330px 0;
+}
+
+.apartado .titulo {
+    font-size: 5em;
+}
+
+.apartado .subtitulo {
+    font-size: 1.8em;
+}
+
+.sucursal {
+    float: left;
+    margin-right: 60px;
+    margin-bottom: 50px;
+    height: 71px;
+}
+
+#botonPagarSucursal {
+    margin-left: 20px;
+}
+
+.botonesSucursal {
+    float: right;
+}
+
+.colapsarPDF {
+    font-size: 18px;
+}
+footer {
+    text-align: center;
+    width: 80%;
+    text-transform: uppercase;
+    float: left;
+    margin: 0% 10%;
+}
+footer span {
+    width: 100%;
+    float: left;
+}
+.marginTop {
+    margin-top: 30px;
+    border: 1px solid black;
+}

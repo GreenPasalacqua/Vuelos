@@ -1,0 +1,98 @@
+.seatSelection {
+    text-align: center;
+}
+
+.listaViajeros {
+    text-align: left;
+}
+
+.elementoListaViajeros {
+    background-color: #1edbef;
+    color: #fff;
+}
+
+.seatsChart {
+    border-left: 1px solid gainsboro;
+}
+
+.seatsReceipt {
+    text-align: center;
+    border: 2px dashed dodgerblue;
+}
+
+.seatNumber {
+    display: inline;
+    padding: 10px 14px;
+    line-height: 25px;
+    background-color: dodgerblue;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.seatRow {
+    padding: 10px;
+}
+
+.seatSelected {
+    background-color: lightgreen;
+    color: #000;
+}
+
+.seatUnavailable {
+    background-color: #000;
+}
+
+.seatRowNumber {
+    background-color: tomato;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 1px 1px 1px 20px;
+    text-align: right;
+    margin-right: 10px;
+    clear: none;
+    display: inline;
+}
+
+.hidden {
+    display: none;
+}
+
+.seatsAmount {
+    max-width: 2em;
+}
+
+.frente {
+    background-color: gainsboro;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin-left: 125px;
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.columnas {
+    background-color: lightseagreen;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 1px 10px;
+    margin-left: 125px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.separador {
+    margin-right: 20px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+#botonAsientos {
+    float: right;
+    margin-bottom: 10px;
+}

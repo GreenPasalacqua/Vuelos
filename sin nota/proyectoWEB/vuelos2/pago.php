@@ -1,18 +1,14 @@
 <?php
+$servidor = "localhost";
+$usuario = "root";
+$cont = "";
+$bd = "proyecto";
 
-    /*****************************/
-    $host="localhost";
-    $user="root";
-    $contraseña="315721";
-    $dataBase="Proyecto";
-    /*****************************/
-    $laConexion=mysqli_connect($host,$user,$contraseña,$dataBase);
-
-/*$con = mysqli_connect($servidor, $usuario, $cont, $bd);
+$con = mysqli_connect($servidor, $usuario, $cont, $bd);
 if ($con->connect_error) {
     die("Error en la conexión: " . $con->connect_error);
 }
-mysqli_select_db($con, $bd);*/
+mysqli_select_db($con, $bd);
 
 session_start();
 
@@ -24,13 +20,14 @@ if (isset($_SESSION['errorNombreTarjeta'])) {
 /**
  * Obtener datos
  */
-$idVuelo = $_SESSION['numeroIDA'];
+/*$idVuelo = $_SESSION['numeroIDA'];*/
+$idVuelo = 6;//////////////////////////////BORRAR Y DESCOMENTAR
 
-$queryPrecio = "SELECT costo FROM Vuelos WHERE idVuelo='$idVuelo'";
-$resultadoPrecio = mysqli_query($laConexion, $queryPrecio);
+/*$queryPrecio = "SELECT costo FROM Vuelos WHERE idVuelo='$idVuelo'";
+$resultadoPrecio = mysqli_query($con, $queryPrecio);
 $filaPrecio = $resultadoPrecio->fetch_assoc();
-$precioVuelo = $filaPrecio['costo'];
-//$precioVuelo = 15000;//////////////////////BORRAR Y DESCOMENTAR
+$precioVuelo = $filaPrecio['costo'];*/
+$precioVuelo = 15000;//////////////////////BORRAR Y DESCOMENTAR
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +38,6 @@ $precioVuelo = $filaPrecio['costo'];
 
     <title>Forma de Pago</title>
 
-    <link rel="stylesheet" type="text/css" href="../css/modales.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -230,9 +226,9 @@ $precioVuelo = $filaPrecio['costo'];
                         <h4><strong>Id de vuelo: </strong> <?php echo $idVuelo ?></h4>
                         <h3><strong>Datos de los botelos</strong></h3>
                         <?php
-                        $listaViajeros = $_SESSION['listaViajeros'];
-                        $numeroViajeros = count($listaViajeros);
-                        //$numeroViajeros = 5; //////////////////////BORRAR Y DESCOMENTAR
+                        /*$listaViajeros = $_SESSION['listaViajeros'];
+                        $numeroViajeros = count($listaViajeros);*/
+                        $numeroViajeros = 5; //////////////////////BORRAR Y DESCOMENTAR
 
                         if ($_SESSION['dataREG'] === "NULL") {
                             //sencillo

@@ -13,7 +13,7 @@ if ($con->connect_error) {
 mysqli_select_db($con, $bd);*/
 
 session_start();
-$cuantos=$_SESSION["totalV"];
+
 $laConexion=mysqli_connect($host,$user,$contraseña,$dataBase);
 $query = "SELECT * FROM PreciosExtra";
 $resultado = mysqli_query($laConexion, $query);
@@ -57,7 +57,6 @@ if ($_SESSION['dataREG'] === "NULL") {
 
     <title>Extras</title>
 
-    <link rel="stylesheet" type="text/css" href="../css/modales.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -149,89 +148,6 @@ if ($_SESSION['dataREG'] === "NULL") {
                     </div>
                 </div>
             </div>
-            <?php 
-                $prruTotal=$_SESSION['prruTotal'];
-                if($_SESSION["dataIDA"]){
-                    $notaIDA=explode(",", $_SESSION["dataIDA"]);
-                    if($_SESSION["dataREG"]!="NULL"){
-                        $notaREG=explode(",", $_SESSION["dataREG"]);
-                        $ok="OK";
-                    }else{
-                        $ok="NEL";
-                    }
-                }
-                    echo "<input id='mostrar-modal' name='modal' type='radio'/>";
-                    echo "<label for='mostrar-modal'>Ver nota + asientos</label>";
-                    echo "<input id='cerrar-modal' name='modal' type='radio'/>";
-                    echo "<label for='cerrar-modal'> X </label>";
-                    echo "<div id='modal'>";
-                        echo "<p>";
-                            if($_SESSION['dataREG'] === "NULL"){
-                                //sencillo
-                                echo "Vuelo de ida: $notaIDA[0]<br>";
-                                echo "$notaIDA[1]<br>";
-                                echo "$notaIDA[2]<br>";
-                                echo "Hora de salida: $notaIDA[4]<br>";
-                                echo "--------------------------------<br>";
-                                echo "Precio: $ $notaIDA[5]<br>";
-                                echo "-<br>";
-                                echo "--------------------------------<br>";
-                                $prruTotal=($notaIDA[5])*$cuantos;
-                                for ($i = 0; $i < 1; $i++) {
-                                    $datosAsiento=array(); 
-                                    for ($j=0; $j < $numeroViajeros; $j++) { 
-                                        $datosAsiento[] = explode(".", $_SESSION['vectorRegistroAsientos'][$i][$j]);
-                                        //echo $datosAsiento[$j][0] . " " . $datosAsiento[$j][1] . " " . $datosAsiento[$j][2] . " " . $datosAsiento[$j][3];
-                                        echo "Nombre: ".$datosAsiento[$j][0]."<br>";
-                                        echo "Asiento: ".$datosAsiento[$j][1]."<br>";
-                                        $viaje=explode("-", $datosAsiento[$j][2]);
-                                        echo "$viaje[0]<br>";
-                                        echo "$viaje[1]<br>";
-                                        echo "Precio asiento: $".$datosAsiento[$j][3]."<br>";
-                                        $prruTotal+=$datosAsiento[$j][3];
-                                    }
-                                }
-                                echo "--------------------------------<br>";
-                                echo "TOTAL: $ $prruTotal<br>";
-
-                            } else {
-                                //redondo
-                                echo "Vuelo de ida: $notaIDA[0]<br>";
-                                echo "$notaIDA[1]<br>";
-                                echo "$notaIDA[2]<br>";
-                                echo "Hora de salida: $notaIDA[4]<br>";
-                                echo "--------------------------------<br>";
-                                echo "Precio: $ $notaIDA[5]<br>";
-                                echo "-<br>";
-                                echo "Vuelo de vuelta: $notaREG[0]<br>";
-                                echo "$notaREG[1]<br>";
-                                echo "$notaREG[2]<br>";
-                                echo "Hora de salida: $notaREG[4]<br>";
-                                echo "--------------------------------<br>";
-                                echo "Precio: $ $notaREG[5]<br>";
-                                echo "--------------------------------<br><br>";
-                                $prruTotal=($notaIDA[5]+$notaREG[5])*$cuantos;
-                                for ($i = 0; $i < 2; $i++) { 
-                                    $datosAsiento=array();
-                                    for ($j=0; $j < $numeroViajeros; $j++) { 
-                                        $datosAsiento[] = explode(".", $_SESSION['vectorRegistroAsientos'][$i][$j]);
-                                        //echo $datosAsiento[$j][0] . " " . $datosAsiento[$j][1] . " " . $datosAsiento[$j][2] . " " . $datosAsiento[$j][3];
-                                        echo "Nombre: ".$datosAsiento[$j][0]."<br>";
-                                        echo "Asiento: ".$datosAsiento[$j][1]."<br>";
-                                        $viaje=explode("-", $datosAsiento[$j][2]);
-                                        echo "$viaje[0]<br>";
-                                        echo "$viaje[1]<br>";
-                                        echo "precio asiento: $".$datosAsiento[$j][3]."<br>";
-                                        $prruTotal+=$datosAsiento[$j][3];
-                                    }
-                                    echo "<br>";
-                                }
-                                echo "--------------------------------<br>";
-                                echo "TOTAL: $ $prruTotal<br>";
-                            }
-                        echo "</p>";
-                    echo "</div>";
-            ?>
             <button id="botonContinuar" type="submit" class="btn btn-primary btn-lg">Continuar</button>
         </form>
     </div>

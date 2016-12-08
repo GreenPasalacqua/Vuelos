@@ -1,0 +1,77 @@
+create database proyecto;
+use proyecto;
+
+create table Vuelos(
+	idVuelo int primary key,
+	origen varchar(40) not null,
+	destino varchar(40) not null,
+	llego date not null,
+	voy date not null,
+	horaLlego time not null,
+	horaVoy time not null,
+	cupo int not null,
+	ocupados int,
+	clase bool not null,
+	costo decimal(9,2) not null,
+	escala varchar(250)
+)engine=innoDB;
+
+create table Viajero(
+	idViajero int auto_increment primary key,
+	nombre varchar(25) not null,
+	apellido varchar(25) not null,
+	correo varchar(25) not null,
+	nacimiento date  not null,
+	genero char(1) not null,
+	telefono char(17) not null,
+	idVuelo int not null,
+	idVuelo2 int,
+	foreign key (idVuelo) references Vuelos(idVuelo)
+)engine=innoDB;
+
+create table Contacto(
+	nombreApellido char(50) primary key, //separar con un guion bajo a la hora de insertar en la BD
+	direccion varchar(50) not null,
+	ciudad varchar(25) not null,
+	estado varchar(25) not null,
+	CP char(5) not null,
+	email varchar(25) not null,
+	telefono char(17) not null,
+	nMaletaExtra int,
+	bPrioridadAbordaje bool,
+	nEquipajesVarios int,
+	idVuelo int not null,
+	foreign key (idVuelo) references Vuelos(idVuelo)
+)engine=innoDB;
+
+create table Pago(
+	nombreContacto char(50) primary key,
+	tipo char(10) not null,
+	numero char(16) not null,
+	numSeguridad char(3) not null,
+	fechaV date not null,
+	fechaPago date not null,
+	monto decimal(9,2) not null,
+	foreign key (nombreContacto) references Contacto(nombreApellido)
+)engine=innoDB;
+
+create table Asientos(
+	fila char(1) not null,
+	columna char(1) not null,
+	seccion varchar(15) not null,
+	precio decimal(9,2) not null,
+	ocupado bool not null,
+	idViajero int not null,
+	foreign key (idViajero) references Viajero(idViajero),
+	idVuelo int not null,
+	foreign key (idVuelo) references Vuelos(idVuelo)
+)engine=innoDB;
+
+create table PreciosExtra(
+	maletaExtra decimal(9,2) not null,
+	prioridadAbordaje decimal(9,2) not null,
+	equipajesVarios decimal(9,2) not null
+)engine=innoDB;
+
+insert into PreciosExtra(maletaExtra,prioridadAbordaje,equipajesVarios) values(450,50,300);
+update vuelos set cupo = '36';
