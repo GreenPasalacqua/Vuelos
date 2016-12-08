@@ -1,0 +1,156 @@
+.slideShowWrapper {
+    margin: 5% 15% 5% 15%;
+    padding: 0;
+    position: relative;
+    
+    width: 600px;
+    height: 400px;
+    
+    background-color: black;
+}
+
+.slideShow {
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+/*Esto es lo que hace las sombritas en las esquinas bajas del slideshow.
+ *Ustedes pueden cambiar colores o cualquier propiedad aqui para que exploren
+ *su comportamiento.*/
+.slideShow:before ,
+.slideShow:after {
+    z-index: -1;
+    
+    content: "";
+    width: 50%;
+    
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+    top: 100%;
+    
+    background: rgb(0,0,0,0.75);
+    
+    /*Shadow
+    box-shadow: none|h-shadow v-shadow blur spread color |inset|initial|inherit;*/
+    -webkit-box-shadow: 10px 0px 15px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow:    10px 0px 15px 5px rgba(0,0,0,0.75);
+    box-shadow:         10px 0px 15px 5px rgba(0,0,0,0.75);
+    
+    /*Rotacion del div izquierdo*/
+    -webkit-transform:  rotate(-3deg);
+    -moz-transform:     rotate(-3deg);
+    -o-transform:       rotate(-3deg);
+    -ms-transform:      rotate(-3deg);
+    transform:          rotate(-3deg);
+    
+}
+
+.slideShow:after {
+    
+    /*Rotacion del div derecho*/
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+    
+    right: 10px;
+    left: auto;
+    
+}
+/*--------------------------------------------------*/
+
+.ventana {
+    margin: 0;
+    padding: 0;
+    
+    position: relative;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    overflow: hidden; /*borren esta propiedad y van a ver como las imagenes flotan fuera del div ventana*/
+    
+    /*border
+    border: border-width border-style border-color|initial|inherit;*/
+    border: 5px solid white;
+}
+
+.ventana figure {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ventana figure img {
+    width: 100%;
+    height: 100%;
+}
+
+.active {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.ventana figure figcaption {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    
+    width: 100%;
+    height: 30px;
+    
+    background-color: white;
+    opacity: 0.6;
+    
+}
+
+/*No inverti mucho tiempo maniobrando controller o los botones
+ *pero ustedes pueden hacerlo mas bonito :)*/
+.controller {
+    margin: 0;
+    padding: 0;
+    
+    position: absolute;
+    left: 5px;
+    bottom: -100px;
+    
+    width: 605px;
+    height: 50px;
+    
+    background-color: white;
+}
+
+.last, .next {
+    font-size: 20px;
+    width: 25%;
+    height: 50px;
+    
+    background-color: red;
+}
+
+.last {
+    position: absolute;
+    
+    top: 0;
+    left: 0;
+}
+
+.next {
+    position: absolute;
+    
+    top: 0;
+    right: 0;
+}

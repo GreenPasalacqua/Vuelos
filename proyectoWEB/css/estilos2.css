@@ -1,0 +1,234 @@
+html {
+	background-image: url(../images/wood_1.png);
+}
+.centro {
+	background-image: url(../images/giftly.png);
+	float: left;
+	width: 80%;
+	min-height: 580px;
+	margin: 0% 10%;
+}
+.menuBar {
+	float: left;
+	position: fixed;
+	margin: 1% 10%;
+	z-index: 100;
+	width: 80%;
+	border: solid #32BCFF;
+	border-radius: 0.5em;
+	background-color: #fff;
+	text-transform: uppercase;
+}
+.carrusel {
+	float: left;
+	width: 100%;
+	/*padding: 0% 1%;*/
+	/*margin: 0% 10%;*/
+}
+.carrusel img {
+	margin-left: 17.5%;
+	margin-right: 17.5%;
+	width: 65%;
+}
+.formulario {
+	background: rgba(105,204,49,0.6);
+	border-radius: 0.5em;
+	padding: 1.5%;
+	float: left;
+	width: 80%;
+	height: 40%;
+	margin: 1% 10%;
+}
+/******************************************************/
+.cajaDestinos {
+	text-align: center;
+	background: #4F7DFF;
+	border-radius: 0.5em;
+	float: left;
+	text-transform: uppercase;
+	width: 100%;
+}
+.destinos {
+	width: 46%;
+	float: left;
+	margin: 1%;
+}
+.selectDestinos {
+	text-transform: uppercase;
+}
+.tipoVuelo {
+	border: solid;
+	border-radius: 0.5em;
+	background: white;
+	padding: 0.5%;
+}
+.buscar {
+	width: 250px;
+	height: 75px;
+}
+option {
+	text-transform: uppercase;
+}
+/******************************************************/
+.cuerpo {
+	float: left;
+	width: 80%;
+	border: solid;
+	border-radius: 0.5em;
+	text-align: center;
+	padding: 2%;
+	margin: 10%;
+}
+.cuerpo span {
+	text-transform: uppercase;
+	width: 100%;
+	float: left;
+}
+.cuerpo label {
+	/*width: 100%;*/
+	margin-bottom: 2%;
+	float: left;
+}
+.mensajes {
+	width: 100%;
+	margin-bottom: 2%;
+	float: left;
+}
+.cuerpo a {
+	text-align: center;
+	border: solid;
+	border-radius: 0.5em;
+	margin: 1%;
+	padding: 1%;
+}
+/******************************************************/
+.infoVuelo {
+	text-align: center;
+	float: left;
+	border: solid;
+	border-radius: 0.5em;
+	width: 100%;
+}
+.muestraVuelos {
+	float: left;
+	width: 100%;
+}
+.botonEnviar {
+	float: left;
+	text-align: center;
+	width: 100%;
+}
+.botonGrande {
+	/*float: left;*/
+	width: 300px;
+	height: 50px;
+}
+/******************************************************/
+.datosViajero {
+	width: 100%;
+	border: solid;
+	border-radius: 0.5em;
+	text-transform: uppercase;
+	float: left;
+}
+.who {
+	width: 98%;
+	/*border: solid;*/
+	float: left;
+	padding: 1%;
+	margin: 1%;
+}
+.whoDiv {
+	width: 100%;
+	float: left;
+}
+.etiqueta {
+	float: left;
+	width: 50%;
+}
+.who input {
+	float: left;
+	width: 50%;
+	border: #000;
+	border-radius: 0.8em;
+}
+/******************************************************/
+.mensaje {
+	font-size: 20pt;
+	float: left;
+	width: 100%;
+	text-transform: uppercase;
+}
+.cuantos {
+	text-transform: uppercase;
+	width: 100%;
+	float: left;
+	padding: 1%;
+}
+.numero {
+	float: left;
+	margin: 1% 0 3% 0%;
+	width: 33%;
+}
+.numero label {
+	float: left;
+	width: 50%;
+}
+.numero input {
+	float: left;
+	width: 20%;
+}
+/******************************************************/
+.infoVuelo {
+	float: left;
+	width: 100%;
+	border: solid;
+}
+/******************************************************/
+.bloqueAdultos {
+	float: left;
+	border: solid;
+	margin: 1%;
+	padding: 1%;
+}
+/******************************************************/
+.oak {
+	float: left;
+	width: 40%;
+	margin-left: 30%;
+}
+.sexoOak {
+	float: left;
+	width: 50%;
+	margin: 0% 25%;
+}
+.inputSexo {
+	width: 100%;
+	float: left;
+	color: white;
+	background-color: black;
+	border-radius: 0.8em;
+	font-size: 15pt;
+}
+.sexoOak label {
+	width: 40%;
+	float: left;
+}
+.sexoOak input {
+	width: 10%;
+	float: left;
+}
+/******************************************************/
+footer {
+	background-image: url(../images/giftly.png);
+	text-align: center;
+	width: 80%;
+	text-transform: uppercase;
+	float: left;
+	margin: 0% 10%;
+}
+footer span {
+	width: 100%;
+	float: left;
+}
+
